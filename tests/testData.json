@@ -1,0 +1,40 @@
+{
+    "eventtype": {
+        "name": "test.created"
+    },
+    "eventtypeValid": {
+        "space": "default",
+        "name": "test.created"
+    },
+    "function": {
+        "functionId": "new-test",
+        "type": "http",
+        "provider": {
+            "url": "http://localhost:5000/new-test"
+        }
+    },
+    "functionValid": {
+        "space": "default",
+        "functionId": "new-test",
+        "type": "http",
+        "provider": {
+            "url": "http://localhost:5000/new-test"
+        }
+    },
+    "subscription": {
+        "functionId": "new-test",
+        "event": "http",
+        "method": "POST",
+        "path": "/new-test",
+        "eventType": "test.created",
+        "type": "async"
+    },
+    "subscriptionValid": {
+        "space": "default",
+        "functionId": "new-test",
+        "method": "POST",
+        "path": "/new-test",
+        "eventType": "test.created",
+        "type": "async"
+    }
+}
