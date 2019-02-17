@@ -55,7 +55,7 @@ class EventGateway:
     def createConnection(self, params):
         return self.makePostRequest("connections", params, rsrcId="type")
 
-    # GENERIC REQUEST #
+    # GENERIC POST REQUEST #
 
     def makePostRequest(self, resourceType, params, rsrcId="functionId"):
         url = self.getAdminUrl() + "/" + resourceType
