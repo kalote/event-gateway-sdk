@@ -3,9 +3,6 @@ from setuptools import setup, find_packages
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-with open('LICENSE') as f:
-    license = f.read()
-
 setup(
     name="event-gateway-sdk",
     version="1.0.0",
@@ -16,12 +13,10 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/kalote/event-gateway-sdk",
     packages=find_packages(exclude=('tests')),
-    license=license,
+    install_requires=["requests"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Framework :: Serverless",
-        "Cloud Programming :: Serverless :: Event-gateway"
     ],
 )

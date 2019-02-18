@@ -17,16 +17,18 @@ This is the Python SDK for interacting with the [Event Gateway](https://github.c
 
 ## Installation
 
-TBD
+```
+pip install event-gateway-sdk
+```
 
 ## Usage
 
 Use the `emit` command to emit a [CloudEvent](https://github.com/cloudevents/spec) payload to your Event Gateway. The event will be received by any function that is subscribed to your event.
 
 ```python
-import eventgateway from eventgateway
+from eventgateway import EventGateway
 
-eg = eventgateway.EventGateway()
+eg = EventGateway()
 cloudEvent = {
     "eventType": "user.created",
     "cloudEventsVersion": "0.1",
@@ -62,9 +64,9 @@ You can also use the Event Gateway SDK with your own, self-hosted Event Gateway.
 **Example**
 
 ```python
-import eventgateway from eventgateway
+from eventgateway import EventGateway
 
-eg = eventgateway.EventGateway(url="https://mytenant-myapp.slsgateway.com", space="user")
+eg = EventGateway(url="https://mytenant-myapp.slsgateway.com", space="user")
 ```
 
 ## Available Functions
@@ -76,9 +78,9 @@ Used to check the connectivity to the Event Gateway (using the `/v1/status` endp
 **Example**
 
 ```python
-import eventgateway from eventgateway
+from eventgateway import EventGateway
 
-eg = eventgateway.EventGateway()
+eg = EventGateway()
 if eg.checkConnection():
     print("Connection succesfull")
 else:
@@ -92,9 +94,9 @@ Utility to print the current configuration.
 **Example**
 
 ```python
-import eventgateway from eventgateway
+from eventgateway import EventGateway
 
-eg = eventgateway.EventGateway()
+eg = EventGateway()
 eg.printConfig()
 ```
 
@@ -105,12 +107,12 @@ Function to create an event type.
 **Example**
 
 ```python
-import eventgateway from eventgateway
+from eventgateway import EventGateway
 
 eventtype = {
     "name": "http.request"
 }
-eg = eventgateway.EventGateway()
+eg = EventGateway()
 eg.createEventType(eventtype)
 ```
 
@@ -121,7 +123,7 @@ Function to create a function trigger.
 **Example**
 
 ```python
-import eventgateway from eventgateway
+from eventgateway import EventGateway
 
 function = {
     "functionId": "new-user",
@@ -130,7 +132,7 @@ function = {
         "url": "http://myapp.com/user/new"
     }
 }
-eg = eventgateway.EventGateway()
+eg = EventGateway()
 eg.createFunction(function)
 ```
 
@@ -141,7 +143,7 @@ Function to subscribe to a function.
 **Example**
 
 ```python
-import eventgateway from eventgateway
+from eventgateway import EventGateway
 
 subscription = {
     "functionId": "new-user",
@@ -151,7 +153,7 @@ subscription = {
     "eventType": "http.request",
     "type": "async"
 }
-eg = eventgateway.EventGateway()
+eg = EventGateway()
 eg.createSubscription(subscription)
 ```
 
