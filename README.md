@@ -116,6 +116,32 @@ eg = EventGateway()
 eg.createEventType(eventtype)
 ```
 
+### getEventType
+
+Function to get an event type.
+
+**Example**
+
+```python
+from eventgateway import EventGateway
+
+eg = EventGateway()
+eg.getEventType("user.created")
+```
+
+### getAllEventType
+
+Function to get all event type.
+
+**Example**
+
+```python
+from eventgateway import EventGateway
+
+eg = EventGateway()
+eg.getAllEventType()
+```
+
 ### createFunction
 
 Function to create a function trigger.
@@ -134,6 +160,32 @@ function = {
 }
 eg = EventGateway()
 eg.createFunction(function)
+```
+
+### getFunction
+
+Function to get a function.
+
+**Example**
+
+```python
+from eventgateway import EventGateway
+
+eg = EventGateway()
+eg.getFunction("new-user")
+```
+
+### getAllFunction
+
+Function to get all functions.
+
+**Example**
+
+```python
+from eventgateway import EventGateway
+
+eg = EventGateway()
+eg.getAllFunction()
 ```
 
 ### createSubscription
@@ -155,6 +207,32 @@ subscription = {
 }
 eg = EventGateway()
 eg.createSubscription(subscription)
+```
+
+### getSubscription
+
+Function to get a subscription.
+
+**Example**
+
+```python
+from eventgateway import EventGateway
+
+eg = EventGateway()
+eg.getSubscription("YXN5bmMsaHR0cC5yZXF1ZXN0LG5ldy11c2VyLW9wZW5wYWFzLCUyRmppcmE")
+```
+
+### getAllSubscription
+
+Function to get all subscription.
+
+**Example**
+
+```python
+from eventgateway import EventGateway
+
+eg = EventGateway()
+eg.getAllSubscription()
 ```
 
 ## Contribute

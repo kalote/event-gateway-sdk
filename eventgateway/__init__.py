@@ -55,6 +55,45 @@ class EventGateway:
     def createConnection(self, params):
         return self.makePostRequest("connections", params, rsrcId="type")
 
+    # GET STUFF #
+
+    def getAllEventType(self):
+        return self.makeGetRequest("eventtypes")
+
+    def getEventType(self, rsrcId):
+        return self.makeGetRequest("eventtypes", rsrcId=rsrcId)
+
+    def getAllFunction(self):
+        return self.makeGetRequest("functions")
+
+    def getFunction(self, rsrcId):
+        return self.makeGetRequest("functions", rsrcId=rsrcId)
+
+    def getAllSubscription(self):
+        return self.makeGetRequest("subscriptions")
+
+    def getSubscription(self, rsrcId):
+        return self.makeGetRequest("subscriptions", rsrcId=rsrcId)
+
+    # GENERIC GET REQUEST #
+
+    def makeGetRequest(self, resourceType, rsrcId=""):
+        url = self.getAdminUrl() + "/" + resourceType
+        if (rsrcId):
+            url += "/" + rsrcId
+        r = requests.get(url)
+        if r.status_code == 200:
+            return r.json()
+        elif r.status_code == 404:
+            print("{} {} not found".format(
+                resourceType, rsrcId))
+            return False
+        else:
+            print("Issue while getting {} {}\n".format(
+                resourceType, rsrcId))
+            print(r.json())
+            return False
+
     # GENERIC POST REQUEST #
 
     def makePostRequest(self, resourceType, params, rsrcId="functionId"):
