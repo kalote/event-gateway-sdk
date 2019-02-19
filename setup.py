@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="event-gateway-sdk",
-    version="1.0.0",
+    version="1.1.0",
     author="Johann BICH",
     author_email="johannbich@gmail.com",
     description="Event Gateway Python SDK",
