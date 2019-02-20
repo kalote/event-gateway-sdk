@@ -28,7 +28,7 @@ Use the `emit` command to emit a [CloudEvent](https://github.com/cloudevents/spe
 ```python
 from eventgateway import EventGateway
 
-eg = EventGateway()
+eg = EventGateway(url="https://mytenant-myapp.slsgateway.com")
 cloudEvent = {
     "eventType": "user.created",
     "cloudEventsVersion": "0.1",
@@ -56,10 +56,11 @@ You can also use the Event Gateway SDK with your own, self-hosted Event Gateway.
 
 **Parameters**
 
-- `url` - `string` - optional, Events API URL, default: `http://localhost`
+- `url` - `string` - optional, Events API URL, default: `http://localhost:4000`
 - `space` - `string` - optional, space name, default: `default`
-- `adminPort` - `int` - optional, port for configuration, default: `4001`
-- `clientPort` - `int` - optional, port for calling the event gateway, default: `4000`
+- `configurationUrl` - `string` - optional, Configuration API URL. By default, it's the same as `url` but with `4001` port
+- `connectorUrl` - `string` - optional, Connector API URL. By default, it's the same as `url` but with `4002` port
+- `accessKey` - `string` - optional, access key for hosted Event Gateway. Access key is required for using Configuration API methods on hosted Event Gateway
 
 **Example**
 
