@@ -38,7 +38,7 @@ cloudEvent = {
         "userName": "bar"
     }
 }
-eg.emit(cloudEvent=configData, path="/user/send-mail-user")
+eg.emit(cloudEvent=cloudEvent, path="/user/send-mail-user")
 ```
 
 The `emit()` function takes three arguments: 
